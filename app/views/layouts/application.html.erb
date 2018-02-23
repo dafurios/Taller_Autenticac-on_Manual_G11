@@ -18,6 +18,17 @@
 
   <body>
     <%= render 'shared/navbar' %>
+
+    <% if logged? %>
+   <h5>Bienvenido <%= current_user.name %> !</h5>
+     <%= link_to "salir", session_path(current_user), method: :delete %>
+   <% else %>
+   <%= link_to "registrarse", users_path, method: :create %>
+
+
+   <h5>No has iniciado sesion ... </h5>
+   <% end %>
+
     <div class="container">
       <% if notice %>
         <div class="alert alert-dismissible alert-success">
