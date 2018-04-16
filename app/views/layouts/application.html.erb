@@ -23,7 +23,9 @@
    <h5>Bienvenido <%= current_user.name %> !</h5>
      <%= link_to "salir", session_path(current_user), method: :delete %>
    <% else %>
-   <%= link_to "registrarse", users_path, method: :create %>
+      <%= link_to "Iniciar sesion", users_sign_in_path %>
+      <%= link_to "Registrarse", users_sign_up_path %>
+
 
 
    <h5>No has iniciado sesion ... </h5>
